@@ -1,6 +1,7 @@
 // import { readSpreadValues } from '../core/spotrateDB.js';
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore.js";
 import { app } from '../../../config/db.js';
+import { USER_ID, API_KEY } from '../../../global/global.js';
 
 const script = document.createElement('script');
 script.src = 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js';
@@ -22,9 +23,6 @@ showTable();
 
 
 let askSpread, bidSpread, goldValue, silverBidSpread, silverAskSpread, goldBuy, goldSell, silverBuy, silverSell, silverValue, goldValueUSD;
-
-// Gold API KEY
-const API_KEY = 'goldapi-fbqpmirloto20zi-io'
 
 //
 async function fetchData() {
@@ -258,7 +256,7 @@ async function fetchData1() {
 
 async function readSpreadValues() {
     try {
-        const uid = 'G46UZJNWfJhGAWytlVuUzFXzKf13';
+        const uid = USER_ID;
         if (!uid) {
             console.error('User not authenticated');
             throw new Error('User not authenticated');
@@ -304,7 +302,7 @@ displaySpreadValues();
 // Function to read data from the Firestore collection
 async function readData() {
     // Get the UID of the authenticated user
-    const uid = 'G46UZJNWfJhGAWytlVuUzFXzKf13';
+    const uid = USER_ID;
 
     if (!uid) {
         console.error('User not authenticated');
