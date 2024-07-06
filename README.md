@@ -1,2 +1,1 @@
-# pulparambil-app
-https://aurifyae.github.io/pulparambil-app/
+https://aurifyae.github.io/LEEN-Gold-App/
